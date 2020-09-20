@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>块作用域 | 前端知识库</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/egg.png">
+    <meta name="description" content="Kevin的学习笔记">
+    <link rel="preload" href="/assets/css/0.styles.ddae8a65.css" as="style"><link rel="preload" href="/assets/js/app.70b19418.js" as="script"><link rel="preload" href="/assets/js/2.c11563b8.js" as="script"><link rel="preload" href="/assets/js/11.b3e4a53b.js" as="script"><link rel="prefetch" href="/assets/js/10.7c49bafa.js"><link rel="prefetch" href="/assets/js/12.92420625.js"><link rel="prefetch" href="/assets/js/13.57bd5122.js"><link rel="prefetch" href="/assets/js/3.dd240b05.js"><link rel="prefetch" href="/assets/js/4.c43d6a3a.js"><link rel="prefetch" href="/assets/js/5.753867a9.js"><link rel="prefetch" href="/assets/js/6.195d03e9.js"><link rel="prefetch" href="/assets/js/7.21c293d3.js"><link rel="prefetch" href="/assets/js/8.135a6cf5.js"><link rel="prefetch" href="/assets/js/9.87b2ac91.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ddae8a65.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/egg.png" alt="前端知识库" class="logo"> <span class="site-name can-hide">前端知识库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS" class="dropdown-title"><span class="title">JS</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS" class="mobile-dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/test1.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  计网
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  Demo
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  源码
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  瞎折腾
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  资源
+</a></div><div class="nav-item"><a href="https://github.com/gloomyKevin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JS" class="dropdown-title"><span class="title">JS</span> <span class="arrow down"></span></button> <button type="button" aria-label="JS" class="mobile-dropdown-title"><span class="title">JS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/test1.html" class="nav-link">
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">
+  手写
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  计网
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  Demo
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  源码
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  瞎折腾
+</a></div><div class="nav-item"><a href="/pages/folder1/test3.html" class="nav-link">
+  资源
+</a></div><div class="nav-item"><a href="https://github.com/gloomyKevin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="块作用域"><a href="#块作用域" class="header-anchor">#</a> 块作用域</h1> <p><a name="ykudf"></a></p> <h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <p>变量可以不声明就使用<br>不声明直接使用的弊端,导致全局污染<br>如果存在其他同名变量则会被其覆盖</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  web <span class="token operator">=</span> <span class="token string">&quot;houdunren&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>web<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//houdunren</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><a name="iH3B6"></a></p> <h3 id="变量提升-向军和阮一峰的例子"><a href="#变量提升-向军和阮一峰的例子" class="header-anchor">#</a> 变量提升(向军和阮一峰的例子)</h3> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> web <span class="token operator">=</span> <span class="token string">&quot;houdunren&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">hd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> web <span class="token operator">=</span> <span class="token string">&quot;后盾人&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>web<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">hd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token string">'hello world'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><a name="const"></a></p> <h3 id=""><a href="#" class="header-anchor">#</a></h3> <p><a name="K0twL"></a></p> <h3 id="var"><a href="#var" class="header-anchor">#</a> var</h3> <p>经典例子</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+a<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><a name="rPt3K"></a></p> <h3 id="代码块"><a href="#代码块" class="header-anchor">#</a> 代码块</h3> <p>什么是代码块<br>ES6 的块级作用域必须有大括号，如果没有大括号，JavaScript 引擎就认为不存在块级作用域。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 第一种写法，报错</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">// 第二种写法，不报错</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面代码中，第一种写法没有大括号，所以不存在块级作用域，而<code>let</code>只能出现在当前作用域的顶层，所以报错。第二种写法有大括号，所以块级作用域成立。
+<a name="djR9K"></a></p> <h2 id="tdz"><a href="#tdz" class="header-anchor">#</a> TDZ</h2> <p><a name="QdFE6"></a></p> <h2 id="较为隐蔽的tdz"><a href="#较为隐蔽的tdz" class="header-anchor">#</a> 较为隐蔽的TDZ</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token parameter">x <span class="token operator">=</span> y<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">2</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 报错</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>上面代码中，调用<code>bar</code>函数之所以报错（某些实现可能不报错），是因为参数<code>x</code>默认值等于另一个参数<code>y</code>，而此时<code>y</code>还没有声明，属于“死区”。如果<code>y</code>的默认值是<code>x</code>，就不会报错，因为此时<code>x</code>已经声明了。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token parameter">x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> y <span class="token operator">=</span> x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2, 2]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>另外，下面的代码也会报错，与<code>var</code>的行为不同。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 不报错</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+<span class="token comment">// 报错</span>
+<span class="token keyword">let</span> x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+<span class="token comment">// ReferenceError: x is not defined</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>上面代码报错，也是因为暂时性死区。使用<code>let</code>声明变量时，只要变量在还没有声明完成前使用，就会报错。上面这行就属于这个情况，在变量<code>x</code>的声明语句还没有执行完成前，就去取<code>x</code>的值，导致报错”x 未定义“。</p> <p><a name="yKNN8"></a></p> <h2 id="tdz的本质"><a href="#tdz的本质" class="header-anchor">#</a> TDZ的本质</h2> <p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。<br>重点理解:当前作用域<br><code>const</code>的作用域与<code>let</code>命令相同：只在声明所在的块级作用域内有效。
+<a name="RMn4K"></a></p> <h2 id="let"><a href="#let" class="header-anchor">#</a> let</h2> <p>使用<code>let</code>，声明的变量仅在块级作用域内有效，最后输出的是 6。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+a<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 6</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>上面代码中，变量<code>i</code>是<code>let</code>声明的，当前的<code>i</code>只在本轮循环有效，所以每一次循环的<code>i</code>其实都是一个新的变量，所以最后输出的是<code>6</code>。你可能会问，如果每一轮循环的变量<code>i</code>都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量<code>i</code>时，就在上一轮循环的基础上进行计算。<br>重点理解<br>另外，<code>for</code>循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token string">'abc'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// abc</span>
+<span class="token comment">// abc</span>
+<span class="token comment">// abc</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>上面代码正确运行，输出了 3 次<code>abc</code>。这表明函数内部的变量<code>i</code>与循环变量<code>i</code>不在同一个作用域，有各自单独的作用域。<br>结合方应杭文章<br><a href="https://zhuanlan.zhihu.com/p/28140450" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/p/28140450<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a><br></p> <p><a name="tXpSU"></a></p> <h2 id="块级作用域与函数声明"><a href="#块级作用域与函数声明" class="header-anchor">#</a> 块级作用域与函数声明</h2> <br> <a name="EvGtL"></a>
+### const
+常量名建议全部大写<br>声明时必须同时赋值<br>可以修改引用类型变量的值
+<p>改变常量的引用类型值</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token constant">INFO</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  url<span class="token operator">:</span> <span class="token string">'https://www.houdunren.com'</span><span class="token punctuation">,</span>
+  port<span class="token operator">:</span> <span class="token string">'8080'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token constant">INFO</span><span class="token punctuation">.</span>port <span class="token operator">=</span> <span class="token string">'443'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">INFO</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>下面演示了在不同作用域中可以重名定义常量</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token string">'后盾人'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token string">'向军大叔'</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token constant">NAME</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">NAME</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><br>let,const在不同作用域可以重新声明</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> web <span class="token operator">=</span> <span class="token string">'houdunren.com'</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span> web <span class="token operator">=</span> <span class="token string">'后盾人'</span><span class="token punctuation">;</span> <span class="token comment">//Identifier 'web' has already been declared</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token string">'后盾人'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token string">'向军大叔'</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token constant">NAME</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">NAME</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><br> <br>let在全局声明的变量不会存在于window对象中
+```javascript
+let hd = &quot;hdcms&quot;;
+console.log(window.hd); //undefined
+```
+对比var<br>window全局对象污染与重复声明
+```javascript
+var x = 1;
+console.log(window.x);  // 1
+// 如果不小心声明为已存在的属性
+var screenLeft = 2;
+console.log(window.screenLeft); // 2,原意失效
+let screenLeft = 3;
+console.log(window.screenLeft);
+console.log(screenLeft);
+```
+let相比var,避免了全局污染
+<a name="n6g1r"></a>
+### const本质
+`const`实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，`const`只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>!!!并不是直接可以修改const声明的对象类型
+```javascript
+const foo = {};
+// 为 foo 添加一个属性，可以成功
+foo.prop = 123;
+foo.prop // 123
+// 将 foo 指向另一个对象，就会报错
+foo = {}; // TypeError: &quot;foo&quot; is read-only
+```
+上面代码中，常量`foo`储存的是一个地址，这个地址指向一个对象。不可变的只是这个地址，即不能把`foo`指向另一个地址，但对象本身是可变的，所以依然可以为其添加新属性。<br>下面是另一个例子。
+```javascript
+const a = [];
+a.push('Hello'); // 可执行
+a.length = 0;    // 可执行
+a = ['Dave'];    // 报错
+```
+上面代码中，常量`a`是一个数组，这个数组本身是可写的，但是如果将另一个数组赋值给`a`，就会报错。<br>思考:const声明的对象<br> <br>进一步思考<br>地址类型引用(如声明对象)可以更改<br>存在弊端<br>有些时候不想被修改<br>使用Object的静态方法Object.freeze()
+```javascript
+const foo = Object.freeze({});
+// 常规模式时，下面一行不起作用；
+// 严格模式时，该行会报错
+foo.prop = 123;
+```
+上面代码中，常量`foo`指向一个冻结的对象，所以添加新属性不起作用，严格模式时还会报错。<br>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数。
+```javascript
+var constantize = (obj) =&gt; {
+  Object.freeze(obj);
+  Object.keys(obj).forEach( (key, i) =&gt; {
+    if ( typeof obj[key] === 'object' ) {
+      constantize( obj[key] );
+    }
+  });
+};
+```
+<a name="R40U2"></a>
+### ES6 声明变量的六种方法
+ES5 只有两种声明变量的方法：`var`命令和`function`命令。ES6 除了添加`let`和`const`命令，后面章节还会提到，另外两种声明变量的方法：`import`命令和`class`命令。所以，ES6 一共有 6 种声明变量的方法。<br> <p><a name="d3QUW"></a></p> <h2 id="顶层对象的属性"><a href="#顶层对象的属性" class="header-anchor">#</a> 顶层对象的属性</h2> <p>为了保持兼容性，<code>var</code>命令和<code>function</code>命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，<code>let</code>命令、<code>const</code>命令、<code>class</code>命令声明的全局变量，不属于顶层对象的属性。也就是说，从 ES6 开始，全局变量将逐步与顶层对象的属性脱钩。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">// 如果在 Node 的 REPL 环境，可以写成 global.a</span>
+<span class="token comment">// 或者采用通用方法，写成 this.a</span>
+window<span class="token punctuation">.</span>a <span class="token comment">// 1</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span>b <span class="token comment">// undefined</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>上面代码中，全局变量<code>a</code>由<code>var</code>命令声明，所以它是顶层对象的属性；全局变量<code>b</code>由<code>let</code>命令声明，所以它不是顶层对象的属性，返回<code>undefined</code>。
+<a name="VE3iZ"></a></p> <h2 id="规范"><a href="#规范" class="header-anchor">#</a> 规范</h2> <p><a name="KuvuY"></a></p> <h2 id="块级作用域"><a href="#块级作用域" class="header-anchor">#</a> 块级作用域</h2> <p><strong>（1）let 取代 var</strong><br>ES6 提出了两个新的声明变量的命令：<code>let</code>和<code>const</code>。其中，<code>let</code>完全可以取代<code>var</code>，因为两者语义相同，而且<code>let</code>没有副作用。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>上面代码如果用<code>var</code>替代<code>let</code>，实际上就声明了两个全局变量，这显然不是本意。变量应该只在其声明的代码块内有效，<code>var</code>命令做不到这一点。<br><code>var</code>命令存在变量提升效用，<code>let</code>命令没有这个问题。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>上面代码如果使用<code>var</code>替代<code>let</code>，<code>console.log</code>那一行就不会报错，而是会输出<code>undefined</code>，因为变量声明提升到代码块的头部。这违反了变量先声明后使用的原则。<br>所以，建议不再使用<code>var</code>命令，而是使用<code>let</code>命令取代。<br><strong>（2）全局常量和线程安全</strong><br>在<code>let</code>和<code>const</code>之间，建议优先使用<code>const</code>，尤其是在全局环境，不应该设置变量，只应设置常量。<br><code>const</code>优于<code>let</code>有几个原因。一个是<code>const</code>可以提醒阅读程序的人，这个变量不应该改变；另一个是<code>const</code>比较符合函数式编程思想，运算不改变值，只是新建值，而且这样也有利于将来的分布式运算；最后一个原因是 JavaScript 编译器会对<code>const</code>进行优化，所以多使用<code>const</code>，有利于提高程序的运行效率，也就是说<code>let</code>和<code>const</code>的本质区别，其实是编译器内部的处理不同。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// bad</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">// good</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">// best</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><code>const</code>声明常量还有两个好处，一是阅读代码的人立刻会意识到不应该修改这个值，二是防止了无意间修改变量值所导致的错误。<br>所有的函数都应该设置为常量。<br>长远来看，JavaScript 可能会有多线程的实现（比如 Intel 公司的 River Trail 那一类的项目），这时<code>let</code>表示的变量，只应出现在单线程运行的代码中，不能是多线程共享的，这样有利于保证线程安全。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.70b19418.js" defer></script><script src="/assets/js/2.c11563b8.js" defer></script><script src="/assets/js/11.b3e4a53b.js" defer></script>
+  </body>
+</html>
